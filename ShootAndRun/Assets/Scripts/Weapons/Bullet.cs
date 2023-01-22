@@ -7,6 +7,7 @@ public class Bullet : MonoBehaviour
     public float speed;
     public float damage;
     public GameObject standImpactFX;
+    public GameObject enemyImpactFX;
     private void Update()
     {
         //Merminin hareket etmesi
@@ -23,6 +24,7 @@ public class Bullet : MonoBehaviour
         }
         if (other.CompareTag("Enemy"))
         {
+            Instantiate(enemyImpactFX, transform.position, Quaternion.identity);
             other.GetComponent<EnemyController>().TakeDamage(damage);
             Destroy(this.gameObject);
         }
