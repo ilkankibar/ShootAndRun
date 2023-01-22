@@ -14,6 +14,7 @@ public class CameraFollower : MonoBehaviour
     }
     private void Update()
     {
+        //Kameranýn yumuþak þekilde oyuncuyu takip etmesi
         Vector3 desiredPosition = player.position + offset;
         Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * Time.deltaTime);
         transform.position = smoothedPosition;
